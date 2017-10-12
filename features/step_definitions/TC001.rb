@@ -6,7 +6,7 @@ Given(/^I am authorized with AWS and have a opened the EC2 client$/) do
   )
 end
 
-When(/^I get a the EC2 instance with the instance ID "([^"]*)"$/) do |instanceID|
+When(/^I get the EC2 instance with the instance ID "([^"]*)"$/) do |instanceID|
 	$instance = $ec2.describe_instances({instance_ids: [instanceID]}).reservations.first.instances.first
 end
 
