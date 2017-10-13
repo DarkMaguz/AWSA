@@ -1,9 +1,9 @@
 Given(/^I am authorized with AWS and have a opened the EC2 client$/) do
-  $ec2 = Aws::EC2::Client.new(
-  	access_key_id: $accessKeyID,
-  	secret_access_key: $secretAccessKey,
-  	region: $region
-  )
+	$ec2 = Aws::EC2::Client.new(
+		access_key_id: $accessKeyID,
+		secret_access_key: $secretAccessKey,
+		region: $region
+	)
 end
 
 When(/^I get the EC2 instance with the instance ID "([^"]*)"$/) do |instanceID|
@@ -11,7 +11,7 @@ When(/^I get the EC2 instance with the instance ID "([^"]*)"$/) do |instanceID|
 end
 
 Then(/^I should be able to see that the state is "([^"]*)"$/) do |state|
-  expect($instance.state.name).to eql state
+	expect($instance.state.name).to eql state
 end
 
 Then(/^I should be able to see that the type is "([^"]*)"$/) do |type|
